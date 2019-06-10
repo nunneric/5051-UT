@@ -1,6 +1,7 @@
 ﻿using HW1c.Models;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace UnitTests.Models
 {
@@ -56,6 +57,23 @@ namespace UnitTests.Models
 
             // Assert
             Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ReportViewModel_LogViewModel_Set_Should_Pass()
+        {
+            // Arrange
+            var myTest = new ReportViewModel();
+            var myLogView = new LogViewModel();
+            var myList = new List<LogModel>();
+            myList.Add(new LogModel { PhoneID = "myPhone" });
+            myLogView.LogList = myList;
+
+            // Act
+            myTest.LogViewModel = myLogView;
+
+            // Assert
+            Assert.AreEqual("myPhone", myTest.LogViewModel.LogList[0].PhoneID);
         }
     }
 }
