@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HW1c.Models;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests.Models
@@ -7,8 +8,15 @@ namespace UnitTests.Models
     public class ReportViewModelTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ReportViewModel_Instantiate_Default_Should_Pass()
         {
+            // Arrange
+
+            // Act
+            var result = new ReportViewModel();
+
+            // Assert
+            Assert.IsNotNull(result);
         }
     }
 }
